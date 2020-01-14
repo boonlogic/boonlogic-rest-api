@@ -3,13 +3,12 @@
 If you have already authenticated the web page, skip to [Initialize Instance](#instance)
 ### Getting Started
 1. Open web browser
-2. In the URL, enter http:// followed by the IP address the nano is running on followed by a colon and the port number associated with your boon nano
-      >for example    ```http://10.0.0.000:5007```
+2. In the URL, go to the web address assigned to your account. It should be your api-tenant followed by boonlogic.com. For example: https://6d4ed33b636a961b.boonlogic.com. This link can be found in the .BoonLogic file which was included in the account generation.
 
 3. There should be a title that says: `Boon Logic BoonNano API`
-4. Copy your 32 digit token code associated with your account
+4. Copy your unique api-key associated with your account from the .BoonLogic file.
 2. In the Swagger web page, on the right side after the title panel, click on the green button labeled `Authorize` with a lock
-3. When prompted, enter the copied token key in the `Value` field
+3. When prompted, enter the copied api key in the `Value` field
 4. Click `Authorize`
 
 ### Initialize Instance {#instance}
