@@ -4,7 +4,7 @@
 #### Returns the general information about the server
 
 #### output
->```json
+```json
   {
     "api-version": "/expert/v3",
     "boon-nano": "ed481631",

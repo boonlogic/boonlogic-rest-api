@@ -7,7 +7,7 @@
 >>*label for the nano*
 
 #### output
->```json
+```json
   {
     "numericFormat": "int16",
     "features": [

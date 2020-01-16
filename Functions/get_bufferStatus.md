@@ -7,7 +7,7 @@
 >>*label for the nano*
 
 #### output
->```json
+```json
   {
     "totalBytesInBuffer": 0,
     "totalBytesProcessed": 0,

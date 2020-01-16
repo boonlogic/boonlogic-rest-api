@@ -19,7 +19,7 @@
 >>*list of columns to exclude when autotuning the range*
 
 #### output
->```json
+```json
   {
     "numericFormat": "int16",
     "features": [

@@ -7,7 +7,7 @@
 >>*label for the nano*
 
 #### output
->>*Download file link*
+>*Download file link*
 
 <br/>
 

@@ -11,7 +11,7 @@
 >>*NOTE: see [Guide: Nano Status](../Guides/Guide_Nano_Status.md) for more information*
 
 #### output
->```json
+```json
   {
     "PCA": [
       [

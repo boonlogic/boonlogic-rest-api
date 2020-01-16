@@ -10,7 +10,7 @@
 >>*tar file to upload containing a serialized nano*
 
 #### output
->```json
+```json
   {
     "numericFormat": "int16",
     "features": [

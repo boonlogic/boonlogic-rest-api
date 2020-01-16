@@ -7,7 +7,7 @@
 >>*label for the nano*
 >
 >`config`
->>*json block containing the information for loading and clustering the data*
+>*json block containing the information for loading and clustering the data*
 
 <br/>
 

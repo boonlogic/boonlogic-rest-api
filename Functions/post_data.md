@@ -29,7 +29,7 @@
 >>*boolean for whether to add to buffer or replace contents with new data*
 
 #### output
->```json
+```json
   {
     "ID": [
       0
