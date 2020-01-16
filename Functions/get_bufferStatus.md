@@ -7,10 +7,6 @@
 >>*label for the nano*
 
 #### output
-<<<<<<< HEAD
-=======
->
->>>>>>> 22281c81257808f16c08f20d063c3d6d23241096
 ```json
   {
     "totalBytesInBuffer": 0,
