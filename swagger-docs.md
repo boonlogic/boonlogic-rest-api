@@ -10,12 +10,8 @@ Welcome to the swagger-ui documentation page!
 
 ## Guides
 
-###### [BoonNano](./Guides/Guide_BoonNano.md)
+###### [BoonNano](./Guides/Guide_Boon_Nano.md)
 
 ###### [Nano Results](./Guides/Guide_Nano_Results.md)
 
 ###### [Nano Status](./Guides/Guide_Nano_Status.md)
-
-## Rest Calls
-
-###### [Index](./Index.md)

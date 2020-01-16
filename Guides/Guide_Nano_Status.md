@@ -1,14 +1,13 @@
 # Guide: Nano Status
 
 ### Options
-The nano status stats can only be called from `GET /expert/v2/nanoStatus/{instanceID}`. There are 10 return types:
+The nano status stats can only be called from `GET /expert/v3/nanoStatus/{instanceID}`. There are 10 return types:
 - PCA
 - clusterSizes
 - anomalyIndexes
 - frequencyIndexes
 - distanceIndexes
 - clusterGrowth
-- patternMemory
 - numClusters
 - totalInferences
 - averageInferenceTime
@@ -37,10 +36,6 @@ The last of the zero-base indexed lists, the distance indexes are values that te
 ##### clusterGrowth
 The cluster growth curve is a two dimensional plot that gives the user a feel for the clustering behavior over time. During a training run with purely normal data, the curve looks logarithmic approaching an asymptote. Then when an anomaly occurs, the cluster count increases in another smaller logarithmic curve above the original training curve. The list returned by clusterGrowth are the indexed pattern numbers where a new cluster was created which are also the x-values of this curve. The y-values can be derived from the zero-based index values of the list. For instance, if clusterGrowth returns {0,1,5,7,20}, the coordinates become {{0,0},{1,1},{5,2},{7,20}}.
 
-##### patternMemory
-The pattern memory represents the vector transform from the original pattern space to the cluster's location in the cluster space. These are vectors in binary space that have been encode to base64.
->NOTE: cluster zero does not a representation in cluster space since it is not created from a new cluster but rather is a catch all cluster.
-
 ##### numClusters
 This is exactly what the variable says it is: the number of clusters created up to that point which includes cluster zero. This value should equal the length of the lists: PCA, clusterSizes, anomalyIndexes, frequencyIndexes, distanceIndexes, clusterGrowth, and is one more than the length of the first dimension of patternMemory.
 
@@ -50,10 +45,10 @@ This is the total number of patterns successfully clustered. The total of all th
 ##### averageInferenceTime
 The value returned here is the average time to cluster each inference in microseconds.
 
->NOTE: Setting results equal to an empty string is not an option when calling `GET /expert/v2/nanoStatus/{instanceID}` since that is called only when at least one value is desired.
+>NOTE: Setting results equal to an empty string is not an option when calling `GET /expert/v3/nanoStatus/{instanceID}` since that is called only when at least one value is desired.
 
 For more statistical values, see [Guide: Nano Results](./Guide_Nano_Results.md)
 
 <br/>
 
-[Return to documentation homepage](../Swagger_Landing_Page.md)
+[Return to documentation homepage](../swagger-docs.md)

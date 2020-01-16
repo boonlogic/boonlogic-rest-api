@@ -1,9 +1,9 @@
 # Guide: Nano Results
 
 These can be called from any of the following rest calls:
-- POST /expert/v2/data/{instanceID}
-- POST /expert/v2/nanoRun/{instanceID}
-- GET //expert/v2/nanoResults/{instanceID}
+- POST /expert/v3/data/{instanceID}
+- POST /expert/v3/nanoRun/{instanceID}
+- GET /expert/v3/nanoResults/{instanceID}
 
 ### Options
 The results call (no matter where you call it from) has six options:
@@ -44,11 +44,11 @@ The distance index (`DI`), is the last of the results' statistical metrics. The 
 `MD` stands for "metadata" and is the one result that is not the same length as the number of clustered patterns. This returns the preprocessing key that was posted with the data.
 
 ##### ''
-Setting results equal to an empty string will omit any results being returned. This is not an option when calling `GET /expert/v2/nanoResults/{instanceID}` since that function is called only when results are desired.
+Setting results equal to an empty string will omit any results being returned. This is not an option when calling `GET /expert/v3/nanoResults/{instanceID}` since that function is called only when results are desired.
 
 
 For more statistical values, see [Guide: Nano Status](./Guide_Nano_Status.md)
 
 <br/>
 
-[Return to documentation homepage](../Swagger_Landing_Page.md)
+[Return to documentation homepage](../swagger-docs.md)

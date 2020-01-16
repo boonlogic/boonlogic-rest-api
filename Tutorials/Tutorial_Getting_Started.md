@@ -15,4 +15,4 @@ Congratulations! Your swagger access is now ready to use.
 See [Tutorial: The General Pipeline](../Tutorials/Tutorial_The_General_Pipeline.md) for next steps.
 <br/>
 
-[Return to documentation homepage](../Swagger_Landing_Page.md)
+[Return to documentation homepage](../swagger-docs.md)
