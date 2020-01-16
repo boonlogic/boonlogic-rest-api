@@ -53,7 +53,7 @@ If you have already authenticated the web page, skip to [Initialize Instance](#i
 11. A few lines down, find the `Code`/`Details` line and the results after it. The code should be `200` and the `Response body` should match exactly what was copied to your clipboard.
 
 ### Post Data
-1. First download the example dataset from [Github](https://github.com/boonlogic/boonlogic-rest-api/blob/master/Data.csv)
+1. First download the example dataset from [Github](https://github.com/boonlogic/boonlogic-rest-api/blob/master/Data.csv) (or use your own data)
 1. Scroll all the way to the bottom of the webpage. The second to last header is labelled `cluster`. Click on the header to expand the options.
 2. The first call after `cluster` should be a green `POST` labelled `expert/v3/data/{instanceID}`. Click on the title to expand the call and click the `Try it out` button on the right.
 3. The first input field is labelled `instanceID`. In the input field, enter the nano label. Again, this should be the input from step 4 in the [Initialize Instance](#instance) section.
@@ -84,6 +84,15 @@ date: Thu, 31 Oct 2019 15:00:27 GMT
 4. In the `results` field, select `--`.
 3. Click on the blue `Execute` button.
 2. Finally, double check the results code. Under the `Code` and `Details` header, the value should be `200` and the `Response body` should be {}.
+
+### Get Results
+1. Under the same section header, find `GET` `/expert/v3/nanoResults/{instanceID}`. Click on the words to expand.
+2. Select `Try it out` on the right.
+3. Enter the `instanceID` used in each previous section.
+4. For results, select `ID`
+5. Select the blue `Execute` button.
+6. The output should be a json block with one header: "ID" followed by a list of integers starting with a 1. These are the IDs for each pattern clustered and which cluster they are associated with.
+
 
   Congratulations! You have successfully clustered the data!   
   See [Guide: Boon Nano](../Guides/Guide_Boon_Nano.md) for more information on function calls or [Guide: Nano Results](../Guides/Guide_Nano_Results.md) and [Guide: Nano Status](..Guides/Guide_Nano_Status.md) for information on getting results.
