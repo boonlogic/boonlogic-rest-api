@@ -12,6 +12,8 @@ Welcome to the Boon Nano UI documentation page!
 
 ###### [BoonNano](./Guides/Guide_Boon_Nano.md)
 
+###### [Introduction to Clustering with the Boon Nano](./Guides/Intro_to_Clustering.md)
+
 ###### [Nano Results](./Guides/Guide_Nano_Results.md)
 
 ###### [Nano Status](./Guides/Guide_Nano_Status.md)
