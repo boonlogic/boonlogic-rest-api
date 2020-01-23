@@ -1,3 +1,4 @@
+![Logo](../images/BoonLogic.png)
 # Tutorial: The General Pipeline
 
 If you have already authenticated the web page, skip to [Initialize Instance](#instance)

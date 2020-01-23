@@ -1,3 +1,4 @@
+![Logo](../images/BoonLogic.png)
 # Guide: Introduction to Clustering with the Boon Nano
 
 The Boon Nano is a high-speed, high-efficiency unsupervised clustering algorithm designed to run in real-time. It builds clusters of similar n-space vectors (or patterns). The composition of the clusters in the Nano machine learning model is based on the four key configuration parameters: Minimum Value, Maximum Value, Pattern Length (or dimension) and Percent Variation (Figure 1). Once these parameters are specified, then each pattern assigned to a cluster will vary by at most Percent Variation from the template pattern of that cluster.

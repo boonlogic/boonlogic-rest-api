@@ -1,3 +1,4 @@
+![Logo](./images/BoonLogic.png)
 # Nano UI Documentation
 
 Welcome to the Boon Nano UI documentation page!
