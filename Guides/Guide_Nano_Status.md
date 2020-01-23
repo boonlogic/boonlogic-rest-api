@@ -43,10 +43,9 @@ This is exactly what the variable says it is: the number of clusters created up 
 This is the total number of patterns successfully clustered. The total of all the values in clusterSizes should also equal this value.
 
 ##### averageInferenceTime
-The value returned here is the average time to cluster each inference in microseconds.
+The value returned here is the average time to cluster each inference in microseconds.  
 
->NOTE: Setting results equal to an empty string is not an option when calling `GET /expert/v3/nanoStatus/{instanceID}` since that is called only when at least one value is desired.
-
+<br/>
 For more statistical values, see [Guide: Nano Results](./Guide_Nano_Results.md)
 
 <br/>

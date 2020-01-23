@@ -13,7 +13,6 @@ The results call (no matter where you call it from) has six options:
 - FI
 - DI
 - MD
-- ""
 
 and any subset of those.
 
@@ -45,6 +44,7 @@ The distance index (`DI`), is the last of the results' statistical metrics. The 
 >NOTE: Obsolete function   
 
 
+<br/>
 For more statistical values, see [Guide: Nano Status](./Guide_Nano_Status.md)
 
 <br/>
