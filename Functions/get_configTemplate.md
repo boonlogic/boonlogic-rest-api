@@ -1,3 +1,4 @@
+![Logo](../images/BoonLogic.png)
 # **GET clusterConfig**
 <br/>
 

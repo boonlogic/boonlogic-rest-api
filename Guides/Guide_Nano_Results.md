@@ -1,3 +1,4 @@
+![Logo](../images/BoonLogic.png)
 # Guide: Nano Results
 
 These can be called from any of the following rest calls:
@@ -32,7 +33,7 @@ When learning is turned off, patterns with cluster IDs of 0 have an anomaly inde
 Building on the anomaly index, `SI` stands for "smoothed index". These values are also integer values ranging from 0 to 1000 with similar meanings as the anomaly index in regards to the values' meanings. The smoothed index is one step further than the anomaly indexes. An exponential smoothing function is applied to the anomaly index values to get the smoothed index values. This helps smooth out stand alone anomalies so that single occurances are not flagged.
 
 ##### FI
-Similar to the anomaly indexes, the `FI`, or frequency index, relates to the number of patterns placed in each cluster. The biggest difference is these values are two-way thresholded. Whereas anomaly index values are in relation to the largest cluster, the frequency index relates everything to the average size cluster. This means that values from 1000 to 0 are abnormally frequent with values closest to 0 as most strangely frequent clusters. Values above 1000 are abnormally infrequent where the further the values get from 1000, the more anomalous they are.
+Similar to the anomaly indexes, the `FI`, or frequency index, relates to the number of patterns placed in each cluster. The biggest difference is these values are two-way thresholded. Whereas anomaly index values are in relation to the largest cluster, the frequency index relates everything to the average size cluster. This means that values from 1000 to 0 are abnormally infrequent with values closest to 0 as most anomalous clusters. Values above 1000 are abnormally frequent where the further the values get from 1000, the more common the clusters are.
 >NOTE: ID, RI, and SI all have definitive upper and lower bounds, but FI only has a lower bound and not an upper bound.
 
 

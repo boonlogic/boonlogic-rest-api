@@ -1,3 +1,4 @@
+![Logo](../images/BoonLogic.png)
 # Tutorial: Getting Started
 
 ### Open Nano UI

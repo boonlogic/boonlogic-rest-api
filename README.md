@@ -1,3 +1,4 @@
+![Logo](./images/BoonLogic.png)
 # REST API Documentation
 
 - __Website__: http://boonlogic.com
