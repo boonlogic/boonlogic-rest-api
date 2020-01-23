@@ -7,15 +7,16 @@ If you have already authenticated the web page, skip to [Initialize Instance](#i
 
 3. There should be a title that says: `Boon Logic BoonNano API`
 4. Copy your unique api-key associated with your account from the .BoonLogic file.
-2. In the Swagger web page, on the right side after the title panel, click on the green button labeled `Authorize` with a lock
+2. In the nano web page, on the right side after the title panel, click on the blue button labeled `Authorize` with a lock
 3. When prompted, enter the copied api key in the `Value` field
 4. Click `Authorize`
+5. Close the prompt window
 
 ### Initialize Instance {#instance}
 1. Click on the header labelled `instances` (second from the top)
 2. Find and click on the first green `POST` option which is labelled `/expert/v3/nanoInstance`
-3. On the right side under the green bar, click on `Try it out`
-4. A input field and two new buttons will appear. Enter a label for the nano instance you want to allocate.
+3. On the right side, click on `Try it out`
+4. The input field will not be greyed out and two new buttons will appear. Enter a label for the nano instance you want to allocate.
 4. Choose `Execute`
 5. A few lines down there is a header labelled `Code` followed by `Details` on the same line. Immediately under that is the response code to the request. For a successful request, the code should be `200` with a JSON block containing some information about the instance ID.
 
@@ -29,7 +30,7 @@ If you have already authenticated the web page, skip to [Initialize Instance](#i
     ```
 
 ### Load the Configuration
-1. Scroll down to find the next header labelled `configuration`. Click on it to expand the options.
+1. Scroll down to find the next header labelled `configuration`.
 2. The first option is a blue `GET` command labelled `expert/v3/configTemplate`. Click on the blue bar to expand the command.
 3. Click on `Try it out` on the right hand side.
 4. Fill in each field with the following values:  
@@ -98,4 +99,4 @@ date: Thu, 31 Oct 2019 15:00:27 GMT
   See [Guide: Boon Nano](../Guides/Guide_Boon_Nano.md) for more information on function calls or [Guide: Nano Results](../Guides/Guide_Nano_Results.md) and [Guide: Nano Status](..Guides/Guide_Nano_Status.md) for information on getting results.
   <br/>
 
-[Return to documentation homepage](../swagger-docs.md)
+[Return to documentation homepage](../UI-docs.md)

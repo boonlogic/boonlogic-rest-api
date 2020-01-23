@@ -62,4 +62,4 @@
 
 <br/>
 
-[Return to documentation homepage](../swagger-docs.md)
+[Return to documentation homepage](../UI-docs.md)

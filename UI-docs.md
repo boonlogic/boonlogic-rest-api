@@ -1,6 +1,6 @@
-# Swagger-ui Documentation
+# Nano UI Documentation
 
-Welcome to the swagger-ui documentation page!
+Welcome to the Boon Nano UI documentation page!
 
 ## Tutorials
 
