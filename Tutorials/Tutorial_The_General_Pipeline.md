@@ -48,14 +48,14 @@ If you have already authenticated the web page, skip to [Initialize Instance](#i
 5. After the last variable, click on the blue `Execute` button.
 6. A few lines down, there is the `Code` and `Details` header followed by a number and a `Response body` on the next line. If the number is `200`, highlight the entire JSON block in the `Response body` field. Save to clipboard.
 7. Scroll down the webpage to the next rest call. It should be a green `POST` labelled `/expert/v3/clusterConfig/{instanceID}`. Click on the call bar and click the `Try it out` button on the right.
-8. In the `instanceID` field, enter your nano label (ex example). This should be the input from step 4 in [Initialize Instance](#instance).
+8. In the `instanceID` field, enter your nano label (e.g. "example"). This should be the input from step 4 in [Initialize Instance](#instance).
 9. Select everything in the `config` field. Paste the JSON block copied from step 6 so that it replaces what was there.
 10. Click the blue `Execute` button.
 11. A few lines down, find the `Code`/`Details` line and the results after it. The code should be `200` and the `Response body` should match exactly what was copied to your clipboard.
 
 ### Post Data
 1. First download the example dataset from [Github](https://github.com/boonlogic/boonlogic-rest-api/blob/master/Data.csv) (or use your own data)
-1. Scroll all the way to the bottom of the webpage. The second to last header is labelled `cluster`. Click on the header to expand the options.
+1. Scroll all the way to the bottom of the webpage. The second to last header is labelled `cluster`.
 2. The first call after `cluster` should be a green `POST` labelled `expert/v3/data/{instanceID}`. Click on the title to expand the call and click the `Try it out` button on the right.
 3. The first input field is labelled `instanceID`. In the input field, enter the nano label. Again, this should be the input from step 4 in the [Initialize Instance](#instance) section.
 4. The second input is labelled `data`. Click on the `Choose File` button and select the `Data.csv` file.

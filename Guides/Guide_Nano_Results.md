@@ -42,6 +42,7 @@ The distance index (`DI`), is the last of the results' statistical metrics. The 
 
 ##### MD
 `MD` stands for "metadata" and is the one result that is not the same length as the number of clustered patterns. This returns the preprocessing key that was posted with the data.
+>NOTE: Obsolete function
 
 ##### ''
 Setting results equal to an empty string will omit any results being returned. This is not an option when calling `GET /expert/v3/nanoResults/{instanceID}` since that function is called only when results are desired.
