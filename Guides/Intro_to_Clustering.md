@@ -38,7 +38,7 @@ In some situation, one may want one feature in a pattern to be weighted more hea
 In streaming window mode, the Nano works by using successive, overlapping subsignals as a stream of incoming samples. Samples in this case are typically time series data. The Pattern Length is specified by the user as a "detection window size" and the minimum Value and Maximum Value for the clustering are also chosen (Figure 2) to represent the range of interest in the signal. The streaming window size is the number of input samples that the window is moved to the right (in time) in forming the next input signal.
 
 ![Figure 2](../images/Figure2.png)   
-*Figure 2: A streaming window with pattern length of 250, which means each input vector is 250 successive samples. By setting the streaming window size to 1, we form each waveform by dropping the oldest sample from current input vector and appending the next sample from the input stream.
+*Figure 2: A streaming window with pattern length of 250, which means each input vector is 250 successive samples. By setting the streaming window size to 1, we form each waveform by dropping the oldest sample from current input vector and appending the next sample from the input stream.*
 
 ### Accuracy
 In some rare cases, you may choose to reduce the clustering accuracy in order to reduce inference time. This may produce occasional suboptimal assignments of input vectors to clusters, although the results will generally still be good. For example, streaming IoT applications where "lossy" clustering results are acceptable may benefit from adjusting this parameter. Accuracy is a value ranging from 0.75 to 0.99. The default value of 0.99 produces the highest accuracy results while still ensuring very good performance. 
@@ -58,24 +58,57 @@ Once the Pattern Length and Numeric Type of a block of data are selected, the Bo
  
 ## Clustering Results
 
-#### ID
-The Boon Nano assigns a cluster ID to each input vector in the order it is received. The first vector is always assigned to a new cluster 1. The next vector, if it is within the defined Percent Variation of cluster 1, is also assigned to cluster 1. Otherwise it is assigned to a new cluster 2. Continuing this way all vectors are assigned cluster IDs in such a way that each vector in each cluster is within the desired Percent Variation of that cluster's centroid. In some circumstances the "no cluster ID" value of 0 may be assigned to a vector. This happens if learning has been turned off (an option within the Nano) or if the maximum cluster count has been reached. It should be noted that cluster IDs are assigned serially so having similar cluster IDs (for instance, 17 and 18) says nothing about the similarity of those clusters. However, PCA (see below) can be used to measure relative proximity of clusters to each other.
+### Cluster ID (ID)
+The Boon Nano assigns a **Cluster ID** to each input vector in the order it is received. The first vector is always assigned to a new cluster 1. The next vector, if it is within the defined Percent Variation of cluster 1, is also assigned to cluster 1. Otherwise it is assigned to a new cluster 2. Continuing this way all vectors are assigned cluster IDs in such a way that each vector in each cluster is within the desired Percent Variation of that cluster's centroid. In some circumstances the "no cluster ID" value of 0 may be assigned to a vector. This happens if learning has been turned off (an option within the Nano) or if the maximum cluster count has been reached. It should be noted that cluster IDs are assigned serially so having similar cluster IDs (for instance, 17 and 18) says nothing about the similarity of those clusters. However, PCA (see below) can be used to measure relative proximity of clusters to each other.
 
 ### Raw Anomaly Index (RI)
-The Boon Nano assigns to each pattern a Raw Anomaly Index, that indicates how many patterns are in its cluster relative to other clusters. These integer values range from 0 to 1000 where values close to zero signify patterns that are the most common and happen very frequently. Values close to 1000 are very infrequent and are considered more anomalous the closer the values get to 1000.
+The Boon Nano assigns to each pattern a **Raw Anomaly Index**, that indicates how many patterns are in its cluster relative to other clusters. These integer values range from 0 to 1000 where values close to zero signify patterns that are the most common and happen very frequently. Values close to 1000 are very infrequent and are considered more anomalous the closer the values get to 1000.
 
 When learning is turned off, patterns with cluster IDs of 0 have a raw anomaly index of 1000.
 
 ### Smoothed Anomaly Index (SI)
-Building on the raw anomaly index, we create a Smoothed Anomaly Index which is an edge-preserving, exponential, smoothing filter applied to the raw anomaly indexes of successive input patterns. These values are also integer values ranging from 0 to 1000 with similar meanings as the raw anomaly index. In cases where successive input patterns do not indicate any temporal or local proximity this smoothing may not be meaningful.
+Building on the raw anomaly index, we create a **Smoothed Anomaly Index** which is an edge-preserving, exponential, smoothing filter applied to the raw anomaly indexes of successive input patterns. These values are also integer values ranging from 0 to 1000 with similar meanings as the raw anomaly index. In cases where successive input patterns do not indicate any temporal or local proximity this smoothing may not be meaningful.
 
 ### Frequency Index (FI)
-Similar to the anomaly indexes, the Frequency Index measures the relative number of patterns placed in each cluster. The frequency index measures all cluster sizes relative to the average size cluster. Values equal to 1000 occur about equally often, neither abnormally frequent or infrequent. Values from close to 0 are abnormally infrequent, and values above significantly above 1000 are abnormally frequent.
+Similar to the anomaly indexes, the **Frequency Index** measures the relative number of patterns placed in each cluster. The frequency index measures all cluster sizes relative to the average size cluster. Values equal to 1000 occur about equally often, neither abnormally frequent or infrequent. Values from close to 0 are abnormally infrequent, and values above significantly above 1000 are abnormally frequent.
 
 
 ### Distance Index (DI)
-The Distance Index measures the distance of each cluster centroid to the centroid of all of the cluster centroids. This overall centroid is used as the reference point for this measurement. The values range from 0 to 1000 indicating that distance with indexes close to 1000 as indicating patterns furthest from the center and values close to 0 are abnormally close. Patterns in a space that are similar distances appart have values that are close to the average distance between all clusters to the centroid. On average, these values do not vary a lot in value, but that is not to say that they can't.
+The **Distance Index** measures the distance of each cluster centroid to the centroid of all of the cluster centroids. This overall centroid is used as the reference point for this measurement. The values range from 0 to 1000 indicating that distance with indexes close to 1000 as indicating patterns furthest from the center and values close to 0 are abnormally close. Patterns in a space that are similar distances appart have values that are close to the average distance between all clusters to the centroid. On average, these values do not vary a lot in value, but that is not to say that they can't.
  
+## Example
+We now present a very simple example to illustrate some of these ideas. A set of 48 patterns is shown in Figure 3. A quick look across these indicates that there are at least two different clusters here. Each pattern has 16 features so we configure the Nano for
+* Numeric Type of float32
+* Pattern Length of 16
+
+![Figure 3](../images/Figure3.png)   
+*Figure 3: 48 patterns to be clustered.*
+
+
+We could select the mininum and maximum by visual inspection, but it is not possible to determine the correct Percent Variation this way. So we instead load the patterns into the Nano and tell the Nano to Autotune those parameters. The results comes back with 
+* Min = -4.39421
+* Max = 4.34271
+* Percent Variation = 0.073
+
+We configure the Nano with these parameters, and then run the patterns through the Nano, requesting as a result the "ID" assignd to each input pattern. We receive back the following list: "ID" -> {1, 1, 2, 1, 1, 2, 1, 2, 1, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1, 1, 
+  1, 1, 1, 3, 1, 1, 2, 2, 2, 1, 2, 1, 1, 2, 1, 1, 1, 1, 1, 1, 3, 3, 2, 2, 2, 2, 1, 1}  
+ 
+ Comparing this to the sequence in Figure 3, we see that this is a reasonable cluster. Further, we see that there is a third cluster that may have been missed by our intuitive clustring. This cluster has just three patterns assigned to it. Figure 4 shows the waveforms from Figure 3 plotted on the same axes and colored according according to their assigned cluster IDs. 
+ 
+![Figure 4](../images/Figure4.png)   
+*Figure 4: 48 patterns colored according to their assigned clusters*
+
+The Raw Anomaly Index for each of the three clusters are as follows:
+* Cluster 1 Raw Anomaly Index: 0
+* Cluster 2 Raw Anomaly Index: 170
+* Cluster 3 Raw Anomaly Index: 563
+
+This indicates Cluster 1 had the most patterns assigneed to it. Cluster 2 was also common, and Cluster 3 was significantly less common. It is worth noting that a Raw Anomaly Index of 563 would not be signficant in practice to indicate an anomaly in the machine learning model. Typically, useful anomaly indexes must be in the range of 900 to 1000 to indicate a pattern that is far outside the norm of what has been learned.
+
+**Important Simplifications:** This is an artificially small and simple example to illustrate the meaning of some of the basic principles of using the Boon Nano. In particular, 
+* The Boon Nano would typically be used to cluster 100s of millions or billions of patterns.
+* The number of clusters created from "real" data typically runs into the hundreds or even thousands of clusters. 
+* The speed of the Boon Nano for such a small data set is not noticeable over other clustering techniques such as K-means. However, when the input set contains 100s of millions of input vectors or when the clustering engine must run at sustained rates of 100s of thousands of inferences per second (as with video or streaming sensor data), the Boon Nano's microsecond inference speed make it the only feasible technology for these kinds of solutions.
 
 
 <br/>
