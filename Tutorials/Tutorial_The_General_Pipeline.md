@@ -39,6 +39,7 @@ If you have already authenticated the web page, skip to Initialize Instance
     | variable | value |
     | ---| ---|
     | featureCount | 20 |
+    | numericType | float32 |
     | minVal | -10 |
     | maxVal | 15 |
     | weight | 1 |
