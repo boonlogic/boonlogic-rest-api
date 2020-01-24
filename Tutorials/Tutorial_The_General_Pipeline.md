@@ -4,7 +4,7 @@
 If you have already authenticated the web page, skip to Initialize Instance
 ### Getting Started
 1. Open web browser
-2. In the URL, go to the web address assigned to your account. It should be your api-tenant followed by boonlogic.com. For example: https://6d4ed33b636a961b.boonlogic.com. This link can be found in the .BoonLogic file which was included in the account generation.
+2. In the URL, go to the web address assigned to your account. It should be your api-tenant followed by boonlogic.com. For example: https://6d4ed33b636a961b.boonlogic.com/index.html?api-tenant=130778449cb1588d. This link can be found in the welcome email.
 
 3. There should be a title that says: `Boon Logic BoonNano API`
 4. Copy your unique api-key associated with your account from the .BoonLogic file.
