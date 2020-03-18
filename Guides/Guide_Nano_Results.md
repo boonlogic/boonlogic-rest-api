@@ -46,7 +46,7 @@ The distance index (`DI`), is the last of the results' statistical metrics. The 
 
 
 <br/>
-For more statistical values, see [Guide: Nano Status](Guide_Nano_Status.md) 
+For more statistical values, see [Guide: Nano Status](./Guide_Nano_Status.md) 
 
 <br/>
 
