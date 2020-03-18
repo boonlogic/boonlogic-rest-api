@@ -108,8 +108,3 @@ This indicates Cluster 1 had the most patterns assigneed to it. Cluster 2 was al
 * The Boon Nano would typically be used to cluster 100s of millions or billions of patterns.
 * The number of clusters created from "real" data typically runs into the hundreds or even thousands of clusters. 
 * The speed of the Boon Nano for such a small data set is not noticeable over other clustering techniques such as K-means. However, when the input set contains 100s of millions of input vectors or when the clustering engine must run at sustained rates of 100s of thousands of inferences per second (as with video or streaming sensor data), the Boon Nano's microsecond inference speed makes it the only feasible technology for these kinds of solutions.
-
-
-<br/>
-
-[Return to documentation homepage](../UI-docs.md)
