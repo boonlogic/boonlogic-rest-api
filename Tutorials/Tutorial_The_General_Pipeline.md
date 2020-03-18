@@ -98,7 +98,7 @@ date: Thu, 31 Oct 2019 15:00:27 GMT
 
 
   Congratulations! You have successfully clustered the data!   
-  See [Guide: Boon Nano](../Guides/Guide_Boon_Nano.md) for more information on function calls or [Guide: Nano Results](../Guides/Guide_Nano_Results.md) and [Guide: Nano Status](..Guides/Guide_Nano_Status.md) for information on getting results.
+  See [Guide: Boon Nano](../Guides/Guide_Boon_Nano.md) for more information on function calls or [Guide: Nano Results](../Guides/Guide_Nano_Results.md) and [Guide: Nano Status](../Guides/Guide_Nano_Status.md) for information on getting results.
   <br/>
 
 [Return to documentation homepage](../UI-docs.md)
